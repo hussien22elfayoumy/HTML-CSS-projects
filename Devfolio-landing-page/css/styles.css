@@ -1,0 +1,552 @@
+/* GLOBALS */
+:root {
+  --color-primary: #0078ff;
+  --color-primary-light: #cde1f8;
+
+  --text-gray: rgb(78, 78, 78);
+  --text-gray-dark: rgb(30, 30, 30);
+
+  --transition-5: all 0.5s ease;
+}
+
+body {
+  color: var(--text-gray);
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.color-primary {
+  color: var(--color-primary);
+}
+
+.special-header h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--text-gray-dark);
+}
+.special-header .line {
+  width: 50px;
+  height: 5px;
+  background-color: var(--color-primary);
+}
+
+/* SECTION NAVBAR */
+
+.navbar-section {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navbar-section.navbar {
+  --bs-navbar-brand-color: #fff;
+  --bs-navbar-brand-hover-color: #fff;
+  --bs-navbar-color: #fff;
+  --bs-navbar-active-color: #fff;
+  --bs-navbar-hover-color: #fff;
+}
+
+.navbar-section .navbar-brand {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.navbar-section .navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-section .navbar-nav,
+.navbar-modal .navbar-nav {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 23px;
+  text-transform: uppercase;
+}
+
+.navbar-section .navbar-nav .nav-item {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.navbar-section .nav-item .nav-link::before,
+.navbar-section .nav-item .nav-link.active::before {
+  content: '';
+  width: 0;
+  height: 1.5px;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  visibility: hidden;
+  bottom: 0;
+  left: 8px;
+  transition: var(--transition-5);
+}
+
+.navbar-section .nav-item .nav-link.active::before {
+  visibility: visible;
+  width: 65%;
+}
+
+.navbar-section .nav-item .nav-link:hover::before {
+  visibility: visible;
+  width: 65%;
+}
+
+.navbar-modal .nav-item:hover {
+  color: var(--color-primary);
+}
+
+.navbar-modal .nav-item .active {
+  color: var(--color-primary);
+}
+
+.navbar-modal .modal-fullscreen {
+  height: calc(100vh - 2rem);
+  width: calc(100vw - 2rem);
+  margin: 0 auto 2rem;
+}
+
+.navbar-modal .modal-header {
+  background-color: transparent;
+}
+
+.navbar-modal .active {
+  color: var(--color-primary);
+}
+
+/* SECTION HERO */
+
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../imgs/hero-bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.hero-section .toggle {
+  overflow: hidden;
+  width: 200px;
+  height: 50px;
+  border-right: 5px solid #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  animation-name: toggle;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.hero-section .toggle::after {
+  content: '';
+  font-size: 2.5rem;
+  font-weight: 600;
+  position: absolute;
+  left: 0;
+
+  animation-name: words;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes words {
+  0% {
+    content: 'Developer';
+  }
+
+  50% {
+    content: 'Freelancer';
+  }
+
+  100% {
+    content: 'Developer';
+  }
+}
+
+@keyframes toggle {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 200px;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+/* SECTION ABOUT */
+
+.about-section h2 {
+  color: var(--text-gray-dark);
+}
+
+.about-section .person-details p {
+  color: var(--text-gray);
+}
+
+.about-section .person-details span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-gray-dark);
+}
+
+.about-section .skill-list h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.about-section .skill-list .outer {
+  width: 100%;
+  height: 12px;
+  background-color: var(--color-primary-light);
+  margin-bottom: 1.2rem;
+}
+
+.about-section .skill-list .inner {
+  height: 12px;
+  background-color: var(--color-primary);
+}
+
+.about-section .skill-list .inner.html {
+  width: 85%;
+}
+.about-section .skill-list .inner.css {
+  width: 75%;
+}
+.about-section .skill-list .inner.php {
+  width: 50%;
+}
+.about-section .skill-list .inner.js {
+  width: 90%;
+}
+
+.about-section .about-me h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  position: relative;
+  width: fit-content;
+}
+
+.about-section .about-me h2:after {
+  content: '';
+  width: 70%;
+  height: 3px;
+  background-color: var(--color-primary);
+  display: block;
+  position: absolute;
+  bottom: -12px;
+}
+
+.about-section .about-me p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/* SECTION SERVICES */
+
+.services-section .services-card .services-icon {
+  background-color: #fff;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  font-size: 2.3rem;
+  border: 9px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-5);
+}
+
+.services-section .services-card:hover .services-icon {
+  border-color: var(--color-primary-light);
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.services-section .services-card h3 {
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: var(--text-gray-dark);
+  margin: 1rem 0 1.1rem;
+}
+
+/* SECTION COUNTER */
+
+.counter-section {
+  background-image: linear-gradient(
+      rgb(0, 120, 255, 0.7),
+      rgb(0, 120, 255, 0.7)
+    ),
+    url(../imgs/counters-bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.counter-section .counter-card span {
+  font-size: 2rem;
+}
+
+.counter-section .counter-card p {
+  text-transform: uppercase;
+}
+
+.counter-section .counter-icon i {
+  font-size: 1.5rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 8px solid var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SECTION PORTFOLIO */
+
+.portfolio-section .portfolio-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-gray-dark);
+}
+
+.portfolio-section .portfolio-card p {
+  font-size: 0.8125rem;
+}
+
+.portfolio-section .portfolio-icon i {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  border: 3px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-section .porfolio-image img {
+  transition: var(--transition-5);
+}
+
+.portfolio-section .portfolio-card:hover .porfolio-image img {
+  transform: scale(1.2);
+}
+
+/* SECTION SLIDER */
+
+.testimonial-section {
+  background-image: linear-gradient(
+      rgb(0, 120, 255, 0.7),
+      rgb(0, 120, 255, 0.7)
+    ),
+    url(../imgs/overlay-bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.testimonial-section .testimonial-card .testimonial-image {
+  width: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* SECTION BLOG */
+
+.blog-section .blog-image {
+  width: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.blog-section .card-body .card-title {
+  width: fit-content;
+  transition: var(--transition-5);
+}
+
+.blog-section .card-body .card-title:hover {
+  color: var(--color-primary);
+}
+
+.blog-section .card-footer p {
+  transition: var(--transition-5);
+}
+
+.blog-section .card-footer p:hover {
+  color: var(--color-primary);
+}
+
+.blog-section .card-body .card-tag {
+  background-color: var(--color-primary);
+  font-size: 0.8rem;
+  color: #fff;
+  padding: 6px 16px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* SECTION contact */
+
+.contact-section {
+  background-image: linear-gradient(
+      rgb(0, 120, 255, 0.7),
+      rgb(0, 120, 255, 0.7)
+    ),
+    url(../imgs/overlay-bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-gray-dark);
+  position: relative;
+}
+
+.contact-section h2::after {
+  content: '';
+  background-color: var(--color-primary);
+  width: 6rem;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+}
+
+.contact-section form input,
+.contact-section form textarea {
+  width: 100%;
+  border: 1px solid #bbb;
+  outline: none;
+  padding: 0.8rem;
+}
+
+.contact-section form input:focus,
+.contact-section form textarea:focus {
+  outline: 5px solid var(--color-primary-light);
+  border-color: var(--text-gray);
+}
+
+.contact-section form textarea {
+  min-height: 6rem;
+}
+
+.contact-section button {
+  font-size: 1.2rem;
+  border: none;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  transition: var(--transition-5);
+}
+
+.contact-section button:hover {
+  opacity: 0.8;
+  outline: 5px solid var(--color-primary-light);
+}
+
+.contact-section .get-in-touch .get-in-toch-details {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+.contact-section .get-in-touch .address span {
+  width: 20px;
+}
+
+.contact-section .get-in-touch li {
+  font-size: 1.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--color-primary);
+  transition: var(--transition-5);
+}
+
+.contact-section .get-in-touch li:hover {
+  color: #fff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary-light);
+}
+
+/* SECTION FOOTER */
+
+footer {
+  background-color: #0062d3;
+  box-shadow: inset 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navigate-up a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 2.6rem;
+  height: 2.6rem;
+  color: #fff;
+  background-color: var(--color-primary);
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  transition: var(--transition-5);
+}
+
+.navigate-up a:hover {
+  opacity: 0.7;
+}
+
+/* MEDIA QUIRES */
+
+@media screen and (min-width: 577px) {
+}
+@media screen and (min-width: 768px) {
+  .hero-section h1 {
+    font-size: 4rem;
+  }
+
+  .hero-section p {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .hero-section h1 {
+    font-size: 4.5rem;
+  }
+  .hero-section p {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+}

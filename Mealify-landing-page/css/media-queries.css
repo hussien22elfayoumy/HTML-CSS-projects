@@ -1,0 +1,160 @@
+@media screen and (max-width: 1340px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 950px;
+  }
+  .nav-links {
+    order: 1;
+  }
+
+  .menu {
+    background-color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: block;
+  }
+
+  .nav-transition {
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25rem;
+    padding: 4rem;
+    height: 50rem;
+    transform: translateX(100%);
+    transition: var(--transition-4);
+  }
+
+  .nav-links:hover .nav-transition {
+    transform: translateX(0);
+  }
+  .gallery-section .gallery {
+    height: 80rem;
+  }
+
+  .footer .container {
+    flex-wrap: wrap;
+  }
+  .footer .social-media-box,
+  .footer .get-in-touch-box {
+    width: calc(50% - 2.4rem);
+  }
+
+  .footer .subscribe-box {
+    margin-top: 2.4rem;
+    order: 1;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 994px) {
+  .container {
+    max-width: 750px;
+  }
+  .hero-section .container {
+    flex-direction: column;
+  }
+  .hero-details {
+    order: 1;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    margin-bottom: 4.6rem;
+  }
+
+  .chef-card {
+    max-width: calc(100% / 2 - 1.2rem);
+    margin-bottom: 2.4rem;
+  }
+
+  .gallery-section .gallery {
+    height: 145rem;
+  }
+
+  .gallery-section .gallery-img {
+    max-width: calc(100% / 2 - 1.2rem);
+  }
+  .pizza {
+    order: 1;
+  }
+  .pizz-slice {
+    order: 3;
+  }
+  .steek {
+    order: 5;
+  }
+  .frittata {
+    order: 4;
+  }
+  .burger {
+    order: 2;
+  }
+  .chicken {
+    order: 6;
+  }
+  .kebab {
+    order: 7;
+  }
+
+  .contact-section form .user {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 55%; /* 9px */
+  }
+  .container {
+    max-width: 590px;
+  }
+
+  .chef-card {
+    max-width: 100%;
+  }
+
+  .gallery-section .gallery {
+    height: auto;
+  }
+
+  .gallery-section .gallery-img {
+    max-width: 100%;
+  }
+
+  .contact-section .contact-details {
+    width: 100%;
+  }
+
+  .footer .container {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .footer .social-media-box,
+  .footer .get-in-touch-box,
+  .footer .subscribe-box {
+    width: 100%;
+  }
+
+  .footer .get-in-touch-box {
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 50%; /* 8px */
+  }
+  .container {
+    max-width: 100%;
+  }
+}
